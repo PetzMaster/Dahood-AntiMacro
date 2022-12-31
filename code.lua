@@ -393,6 +393,11 @@ Toggle:WaitForChild("Tog").MouseButton1Click:Connect(function()
 		if not plantPosition then 
 			plantPosition = Character.HumanoidRootPart.CFrame
 		end
+		for _, p in pairs(workspace:GetDescendants()) do
+			if p:IsA("Seat") then
+				p:Destroy()
+			end
+		end
 		while Frames.Focused[Toggle] do
 			local target = players:GetPlayers()[count]
 			if target ~= Client then
